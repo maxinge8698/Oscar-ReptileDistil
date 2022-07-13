@@ -1,3 +1,14 @@
+# Project Preparation
+```
+git clone https://github.com/maxinge8698/Oscar-ReptileDistil
+cd Oscar-ReptileDistil
+git clone https://github.com/huggingface/transformers/git
+cd transformers
+git checkout 067923d
+touch __init__.py
+cd ..
+```
+
 # Download
 
 **Note**
