@@ -62,8 +62,8 @@ python oscar/run_vqa.py \
 --do_train \
 --do_lower_case \
 --max_seq_length 128 \
---per_gpu_train_batch_size 16 \
---per_gpu_eval_batch_size 16 \
+--per_gpu_train_batch_size 32 \
+--per_gpu_eval_batch_size 32 \
 --learning_rate 5e-5 \
 --num_train_epochs 25 \
 --output_dir model/vqa/teacher \
@@ -92,8 +92,8 @@ python oscar/run_gqa.py \
 --do_train \
 --do_lower_case \
 --max_seq_length 165 \
---per_gpu_eval_batch_size 16 \
---per_gpu_train_batch_size 16 \
+--per_gpu_eval_batch_size 48 \
+--per_gpu_train_batch_size 48 \
 --learning_rate 5e-5 \
 --num_train_epochs 5 \
 --output_dir model/gqa/teacher \
@@ -121,8 +121,8 @@ python oscar/run_nlvr.py \
 --do_train \
 --do_lower_case \
 --max_seq_length 55 \
---per_gpu_eval_batch_size 32 \
---per_gpu_train_batch_size 32 \
+--per_gpu_eval_batch_size 72 \
+--per_gpu_train_batch_size 72 \
 --learning_rate 3e-5 \
 --num_train_epochs 20 \
 --output_dir model/nlvr2/teacher  \
@@ -175,8 +175,8 @@ python oscar/run_vqa_with_mkd_and_reptile.py \
 --do_train \
 --do_lower_case \
 --max_seq_length 128 \
---per_gpu_train_batch_size 16 \
---per_gpu_eval_batch_size 16 \
+--per_gpu_train_batch_size 32 \
+--per_gpu_eval_batch_size 32 \
 --num_train_epochs 25 \
 --output_dir model/vqa/student \
 --label_file datasets/vqa/cache/trainval_ans2label.pkl \
@@ -211,8 +211,8 @@ x python oscar/run_gqa_with_mkd_and_reptile.py \
 --do_train \
 --do_lower_case \
 --max_seq_length 165 \
---per_gpu_eval_batch_size 16 \
---per_gpu_train_batch_size 16 \
+--per_gpu_eval_batch_size 48 \
+--per_gpu_train_batch_size 48 \
 --num_train_epochs 5 \
 --output_dir model/gqa/student \
 --label_file datasets/GQA/questions1.2/trainval_testdev_all_ans2label.pkl \
@@ -246,8 +246,8 @@ python oscar/run_nlvr_with_mkd_and_reptile.py \
 --do_train \
 --do_lower_case \
 --max_seq_length 55 \
---per_gpu_eval_batch_size 16 \
---per_gpu_train_batch_size 16 \
+--per_gpu_eval_batch_size 72 \
+--per_gpu_train_batch_size 72 \
 --num_train_epochs 20 \
 --output_dir model/nlvr2/student  \
 --seed 88 \
@@ -277,8 +277,8 @@ python oscar/run_retrieval_with_mkd_and_reptile.py \
 --evaluate_during_training \
 --num_captions_per_img_val 20 \
 --eval_caption_index_file minival_caption_indexs_top20.pt \
---per_gpu_train_batch_size 16 \
---per_gpu_eval_batch_size 16 \
+--per_gpu_train_batch_size 32 \
+--per_gpu_eval_batch_size 32 \
 --num_train_epochs 30 \
 --weight_decay 0.05 \
 --save_steps 5000 \
@@ -314,7 +314,7 @@ python oscar/run_vqa.py \
 --do_test \
 --do_lower_case \
 --max_seq_length 128 \
---per_gpu_eval_batch_size 16 \
+--per_gpu_eval_batch_size 32 \
 --output_dir model/vqa/student \
 --label_file datasets/vqa/cache/trainval_ans2label.pkl \
 --label2ans_file datasets/vqa/cache/trainval_label2ans.pkl \
@@ -336,7 +336,7 @@ python oscar/run_gqa.py \
 --do_test \
 --do_lower_case \
 --max_seq_length 165 \
---per_gpu_eval_batch_size 16 \
+--per_gpu_eval_batch_size 48 \
 --output_dir model/gqa/student \
 --label_file datasets/GQA/0.4true/trainval_testdev_all_ans2label.pkl \
 --label2ans_file datasets/GQA/0.4true/trainval_testdev_all_label2ans.pkl \
@@ -357,7 +357,7 @@ python oscar/run_nlvr.py \
 --do_test \
 --do_lower_case \
 --max_seq_length 55 \
---per_gpu_eval_batch_size 32 \
+--per_gpu_eval_batch_size 72 \
 --output_dir model/nlvr2/student \
 --classifier mlp \
 --cls_hidden_scale 3 \
